@@ -22,11 +22,8 @@ const ProjectRoutes = () => {
 
   return (
 
-	<>
-	
+
 	<BrowserRouter >
-	<NavBar />	
-	<AppBar/>	
 
 		<Routes >				
 			<Route path="/" element={auth ? <Navigate to="/dashboard" /> : <Home />} index /> 
@@ -34,6 +31,13 @@ const ProjectRoutes = () => {
 			<Route path="/forgotpassword" element={auth ? <Navigate to="/dashboard" /> :<ForgotPassword />} /> 
 			<Route path="/login" element={auth ? <Navigate to="/dashboard" /> :<Login />} /> 
 			<Route path="/register" element={auth ? <Navigate to="/dashboard" /> :<Register />} /> 
+			<Route path="/event" element={auth ? <Navigate to="/dashboard" /> :<Event />} /> 
+			<Route path="/Home" element={auth ? <Navigate to="/dashboard" /> :<Home />} /> 
+			<Route path="/test" element={auth ? <Navigate to="/dashboard" /> :<TestPage />} /> 
+			<Route path="/menu" element={auth ? <Navigate to="/dashboard" /> :<Menu />} /> 
+			<Route path="*" element={<NoPage />} /> 
+
+
 
 
 
@@ -53,9 +57,8 @@ const ProjectRoutes = () => {
 			<Route path="*" element={<NoPage />} />
 		</Routes>
 	</BrowserRouter>
-	<Footer/>
 
-	</>
+
 
   )
 }

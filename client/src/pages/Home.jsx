@@ -1,6 +1,56 @@
-import React from 'react';
+import { useEffect } from 'react';
+import Reactt from 'react';
 import HeaderBottom from '../layouts/HeaderBottom';
+import $ from "jquery"
+import { WOW } from "wowjs"
+
 const Home = () => {
+	useEffect(() => {
+	
+		window.scrollFunction()
+		window.slider()
+		//window.swipebox()
+
+
+		$(document).ready(function($) {
+			$(".scroll").click(function(event){		
+				event.preventDefault();
+				$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+			});
+		});
+  
+		new WOW().init();
+		var navoffeset=$(".header-bottom").offset().top;
+		console.log("value of offset ==== ", navoffeset)
+		$(window).scroll(function(){
+		 var scrollpos=$(window).scrollTop(); 
+		 if(scrollpos >=navoffeset){
+		   $(".header-bottom").addClass("fixed");
+		 }else{
+		   $(".header-bottom").removeClass("fixed");
+		 }
+		});
+
+		// $(document).ready(function($) {
+		// 	$(".scroll").click(function(event){		
+		// 	  event.preventDefault();
+		// 	  $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
+		// 	});
+
+
+			
+		//   });
+
+		
+
+		//   $("span.menu").click(function(){
+		// 	$(".top-menu ul").slideToggle("slow" , function(){
+		// 	});
+		// 	});
+
+	
+
+	})
 
   return (
 

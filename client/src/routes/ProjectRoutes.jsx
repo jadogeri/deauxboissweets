@@ -11,59 +11,12 @@ import Login from "../pages/Login.jsx";
 import Event from "../pages/Event.jsx";
 import Menu from "../pages/Menu.jsx";
 import Home from "../pages/Home.jsx"
-import $ from "jquery"
-import { WOW } from "wowjs"
 
 // import TestStore from "../components/testcomponent/TestStore.jsx"
 
 
 const ProjectRoutes = () => {
-	useEffect(() => {
-	
-			window.scrollFunction()
-			window.slider()
-			//window.swipebox()
-	
-	
-			$(document).ready(function($) {
-				$(".scroll").click(function(event){		
-					event.preventDefault();
-					$('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
-				});
-			});
-	  
-			new WOW().init();
-			var navoffeset=$(".header-bottom").offset().top;
-			console.log("value of offset ==== ", navoffeset)
-			$(window).scroll(function(){
-			 var scrollpos=$(window).scrollTop(); 
-			 if(scrollpos >=navoffeset){
-			   $(".header-bottom").addClass("fixed");
-			 }else{
-			   $(".header-bottom").removeClass("fixed");
-			 }
-			});
-	
-			// $(document).ready(function($) {
-			// 	$(".scroll").click(function(event){		
-			// 	  event.preventDefault();
-			// 	  $('html,body').animate({scrollTop:$(this.hash).offset().top},1200);
-			// 	});
-	
-	
-				
-			//   });
-	
-			
-	
-			  $("span.menu").click(function(){
-				$(".top-menu ul").slideToggle("slow" , function(){
-				});
-				});
-	
-		
-	
-		})
+
 	
 	let auth = localStorage.getItem("AUTHKEY");
 	

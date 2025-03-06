@@ -1,24 +1,6 @@
-import React, {useEffect} from 'react';
+import React from 'react';
 import HeaderBottom from '../layouts/HeaderBottom';
-import $ from "jquery"
-
 const Home = () => {
-
-	useEffect(() => {
-		var navoffeset=$(".header-bottom").offset().top;
-        console.log("value of offset ==== ", navoffeset)
-        $(window).scroll(function(){
-         var scrollpos=$(window).scrollTop(); 
-         if(scrollpos >=navoffeset){
-           $(".header-bottom").addClass("fixed");
-         }else{
-           $(".header-bottom").removeClass("fixed");
-         }
-        });
-        
-     
-
-	})
 
   return (
 
@@ -277,6 +259,7 @@ const Home = () => {
 
 					</div>
 				</div>
+
       </div>
 
   );

@@ -1,24 +1,40 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import HeaderBottom from '../layouts/HeaderBottom';
 import $ from "jquery"
 
 const Home = () => {
+
+	useEffect(() => {
+		var navoffeset=$(".header-bottom").offset().top;
+        console.log("value of offset ==== ", navoffeset)
+        $(window).scroll(function(){
+         var scrollpos=$(window).scrollTop(); 
+         if(scrollpos >=navoffeset){
+           $(".header-bottom").addClass("fixed");
+         }else{
+           $(".header-bottom").removeClass("fixed");
+         }
+        });
+        
+     
+
+	})
+
   return (
 
 	<div className="header-banner" id="head">
-		  <div className="slider">
-	    <div className="callbacks_container">
-	      <ul className="rslides" id="slider">
-	        <li>
-	          <img src="assets/images/1.jpg" alt=""/>
-	          <div className="caption wow bounceIn animated" data-wow-delay="0.4s" style={{visibility: "visible", WebkitAnimationDelay: 0.4}}
-            >
-	          	<div className="logo">
-	          		<a href="index.html">fast food</a>
-	          		</div>
-	          	<h3>Restaurant</h3>
-	          </div>
-	        </li>
+		<div className="slider">
+	    	<div className="callbacks_container">
+	      		<ul className="rslides" id="slider">
+			        <li>
+	          			<img src="assets/images/1.jpg" alt=""/>
+						<div className="caption wow bounceIn animated" data-wow-delay="0.4s" style={{visibility: "visible", WebkitAnimationDelay: 0.4}} >
+							<div className="logo">
+								<a href="index.html">fast food</a>
+							</div>
+							<h3>Restaurant</h3>
+						</div>
+	        		</li>
 	        <li>
 	          <img src="assets/images/2.jpg" alt=""/>
 	        	 <div className="caption wow bounceIn animated"  data-wow-delay="0.4s" style={{visibility: "visible", WebkitAnimationDelay: 0.4}}>
@@ -233,7 +249,7 @@ const Home = () => {
 				<input type="text" className="text" value="phone" onFocus={(event)=>{ event.target.value = ''}} onBlur={(event)=>{if (event.target.value  == '') {event.target.value = ' phone';}}}/>
 				</div>
 				<div className="col-md-8 contactgrid1">
-				<textarea onFocus={(event)=>{if(event.target.value  == 'Your Message') {event.target.value = '';}}} onBlur={(event)=>{if (event.target.value  == '') {event.target.value = 'Your Message';}}} >Your Message</textarea>
+				{/* <textarea onFocus={(event)=>{if(event.target.value  == 'Your Message') {event.target.defaultValue = '';}}} onBlur={(event)=>{if (event.target.value  == '') {event.target.defaultValue = 'Your Message';}}} >Your Message</textarea> */}
 				</div>
 				<div className="col-md-4 contactgrid2">
 				<input type="button" value="send message"/>

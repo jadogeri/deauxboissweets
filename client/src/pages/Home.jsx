@@ -3,6 +3,8 @@ import Reactt from 'react';
 import HeaderBottom from '../layouts/HeaderBottom';
 import $ from "jquery"
 import { WOW } from "wowjs"
+import Carousel from '../components/Carousel';
+import Footer from '../layouts/Footer';
 
 const Home = () => {
 	useEffect(() => {
@@ -55,51 +57,12 @@ const Home = () => {
   return (
 
 	<div className="header-banner" id="head">
-		<div className="slider">
-	    	<div className="callbacks_container">
-	      		<ul className="rslides" id="slider">
-			        <li>
-	          			<img src="assets/images/1.jpg" alt=""/>
-						<div className="caption wow bounceIn animated" data-wow-delay="0.4s" style={{visibility: "visible", WebkitAnimationDelay: 0.4}} >
-							<div className="logo">
-								<a href="index.html">fast food</a>
-							</div>
-							<h3>Restaurant</h3>
-						</div>
-	        		</li>
-	        <li>
-	          <img src="assets/images/2.jpg" alt=""/>
-	        	 <div className="caption wow bounceIn animated"  data-wow-delay="0.4s" style={{visibility: "visible", WebkitAnimationDelay: 0.4}}>
-	        	 	<div className="logo">
-	          		<a href="index.html">fast food</a>
-	          		</div>
-	        	 <h3>Restaurant</h3>
-             </div>
-	         </li>
-	        <li>
-	          <img src="assets/images/3.jpg" alt=""/>
-	          <div className="caption wow bounceIn animated" data-wow-delay="0.4s" style={{visibility: "visible", WebkitAnimationDelay: 0.4}}>
-	          	<div className="logo">
-	          		<a href="index.html">fast food</a>
-	          		</div>
-	          	<h3>Restaurant</h3>
-	          	</div>
-	        </li>
-	        <li>
-	          <img src="assets/images/4.jpg" alt=""/>
-	          <div className="caption wow bounceInLeft animated" data-wow-delay="0.4s" style={{visibility: "visible", WebkitAnimationDelay: 0.4}}>
-	          	<div className="logo">
-	          		<a href="index.html-">fast food</a>
-	          		</div>
-	          	<h3>Restaurant</h3>
-	          	</div>
-	        </li>
-	      </ul>
-	  </div>
-  </div>
-{/* <HeaderBottom /> */}
 
-<HeaderBottom />
+		<Carousel />
+
+		{/* <HeaderBottom /> */}
+
+		<HeaderBottom />
 
 		<div className="content">
 		<div className="service-section" id="service">
@@ -291,24 +254,8 @@ const Home = () => {
 				</div>
 				</div>
 			</div>
-			<div className="footer-section">
-				<div className="container">
-					<div className="footer-top wow bounceInRight animated" data-wow-delay="0.4s" style={{visibility: "visible", WebkitAnimationDelay: 0.4}}>
-								<div className="social-icons">
-										<a href="#"><i className="icon4"></i></a>
-										<a href="#"><i className="icon5"></i></a>
-										<a href="#"><i className="icon6"></i></a>
-									</div>
-								</div>
-							<div className="footer-bottom">
-						<p> Copyright &copy;2015  All rights  Reserved | Design by<a href="http://w3layouts.com" target="target_blank">W3Layouts</a></p>
-						</div>
+			<Footer />
 
-				<a className="scroll" href="#head" id="toTop" style={{display: "block"}}> <span id="toTopHover" style={{opacity: 1}}> </span></a>
-
-
-					</div>
-				</div>
 
       </div>
 
